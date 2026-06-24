@@ -1,0 +1,232 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Untuk Siva ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+    min-height:100vh;
+    overflow:hidden;
+}
+
+.page{
+    display:none;
+    height:100vh;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    text-align:center;
+    padding:20px;
+}
+
+.active{
+    display:flex;
+}
+
+.card{
+    background:white;
+    padding:35px;
+    border-radius:25px;
+    max-width:600px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.2);
+    animation:fadeIn 1s ease;
+}
+
+h1{
+    color:#ff4d6d;
+    margin-bottom:15px;
+}
+
+p{
+    color:#555;
+    margin-bottom:20px;
+    line-height:1.7;
+}
+
+.btn{
+    background:#ff4d6d;
+    color:white;
+    border:none;
+    padding:12px 25px;
+    margin:8px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:16px;
+    transition:0.3s;
+}
+
+.btn:hover{
+    transform:scale(1.1);
+    background:#ff2d55;
+}
+
+.heart{
+    font-size:70px;
+    animation:beat 1s infinite;
+}
+
+.footer{
+    margin-top:20px;
+    color:#999;
+    font-size:14px;
+}
+
+@keyframes beat{
+    0%{transform:scale(1);}
+    50%{transform:scale(1.2);}
+    100%{transform:scale(1);}
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HALAMAN 1 -->
+<div class="page active" id="page1">
+    <div class="card">
+        <div class="heart">❤️</div>
+        <h1>Hai Siva 💕</h1>
+
+        <p>
+            Ada sesuatu yang ingin aku sampaikan... 👉👈 <br>
+            Klik tombol di bawah dulu ya sayang 😘
+        </p>
+
+        <button class="btn" onclick="nextPage(2)">
+            Lanjut 💌
+        </button>
+    </div>
+</div>
+
+<!-- HALAMAN 2 -->
+<div class="page" id="page2">
+    <div class="card">
+        <h1>Untuk Siva ❤️</h1>
+
+        <p>
+			Lucu rasanya, kita belum pernah bertemu dan saling menatap secara nyata.
+			Namun dari sekian banyak orang yang hadir dalam hidupku,
+			kamulah yang paling sering menjadi alasan senyumku muncul begitu saja.
+			Terima kasih telah hadir dari kejauhan,
+			dan tetap mampu mewarnai hari-hariku dengan cara yang tak pernah kuduga. 🌹
+        </p>
+
+        <button class="btn" onclick="nextPage(3)">
+            Baca Lagi 💖
+        </button>
+    </div>
+</div>
+
+<!-- HALAMAN 3 -->
+<div class="page" id="page3">
+    <div class="card">
+        <h1>Aku Punya Pertanyaan 😳</h1>
+
+        <p>
+            Kira-kira aku boleh minta sesuatu nggak?
+        </p>
+
+        <button class="btn" onclick="nextPage(4)">
+            Boleh 😍
+        </button>
+
+        <button class="btn"
+            onclick="alert('Yahh, tapi harus boleeeeh ❤️')">
+            Nggak 😝
+        </button>
+    </div>
+</div>
+
+<!-- HALAMAN 4 -->
+<div class="page" id="page4">
+    <div class="card">
+        <h1>Request Spesial 📸</h1>
+
+        <p>
+            Aku lagi kangen banget sama kamuuuuu...
+            Boleh dong kirim PAP yang paling cantik hari ini? 🥰
+        </p>
+
+        <button class="btn" onclick="nextPage(5)">
+            Kirim PAP ❤️
+        </button>
+    </div>
+</div>
+
+<!-- HALAMAN 5 (TERAKHIR) -->
+<div class="page" id="page5">
+    <div class="card">
+        <h1>YEAAYYY 🎉</h1>
+
+        <p>
+            Terima kasih Siva ❤️<br><br>
+
+            Kamu cantik, lucu, baik, dan selalu berhasil bikin hariku lebih indah.
+            Jangan lupa senyum hari ini yaa 🥰
+        </p>
+
+        <button class="btn" onclick="kirimWA()">
+            Kirim PAP ke WhatsApp 📸❤️
+        </button>
+
+        <div class="footer">
+            Dibuat khusus untuk Siva 💕
+        </div>
+    </div>
+</div>
+
+<script>
+
+function nextPage(pageNumber){
+    document.querySelectorAll('.page').forEach(page=>{
+        page.classList.remove('active');
+    });
+
+    document.getElementById('page'+pageNumber)
+        .classList.add('active');
+}
+
+function kirimWA(){
+
+    // GANTI DENGAN NOMOR WHATSAPP KAMU
+    let nomor = "6281217217121";
+
+    let pesan = `Hai Sayang ❤️
+
+Aku sudah sampai di halaman terakhir 😘
+
+Sekarang aku kirim PAP spesial buat kamu yaa 📸💕`;
+
+    window.open(
+        `https://wa.me/${nomor}?text=${encodeURIComponent(pesan)}`,
+        "_blank"
+    );
+}
+
+</script>
+
+</body>
+</html>
+```
